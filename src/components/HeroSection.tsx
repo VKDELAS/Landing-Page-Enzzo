@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MessageCircle } from "lucide-react";
 import { useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -13,6 +13,9 @@ const HeroSection = () => {
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.95]);
+
+  const whatsappLink =
+    "https://wa.me/5514998671049?text=Ol%C3%A1%20Enzzo%2C%20gostaria%20de%20um%20or%C3%A7amento!";
 
   return (
     <section
@@ -48,17 +51,17 @@ const HeroSection = () => {
             transition={{ duration: 1.2, delay: 0.2 }}
             className="font-mono text-xs uppercase text-primary/80 mb-8"
           >
-            developer
+            Solução Digital
           </motion.p>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold mb-8 leading-[0.9] tracking-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[0.9] tracking-tight">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="block text-foreground"
             >
-              Enzzo
+              Seu negócio ainda
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 20 }}
@@ -66,7 +69,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="block text-gradient glow-text"
             >
-              Baraldo
+              não tem site?
             </motion.span>
           </h1>
 
@@ -74,11 +77,9 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 1 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-14 leading-relaxed font-light"
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-14 leading-relaxed font-light"
           >
-            Transformo ideias em experiências digitais.
-            <br className="hidden sm:block" />
-            Sites, bots e soluções sob medida.
+            Você está perdendo clientes agora. Transformo suas ideias em presença digital com sites, bots e soluções sob medida que geram resultados reais.
           </motion.p>
         </motion.div>
 
@@ -89,17 +90,22 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="#contato"
-            className="group relative inline-flex items-center justify-center px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-base hover:brightness-110 transition-all glow-border overflow-hidden"
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-base hover:brightness-110 transition-all glow-border overflow-hidden"
           >
-            <span className="relative z-10">Solicitar Orçamento</span>
+            <span className="relative z-10 flex items-center gap-2">
+              <MessageCircle className="w-5 h-5" />
+              Quero meu site agora
+            </span>
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </a>
           <a
-            href="#servicos"
+            href="#como-funciona"
             className="inline-flex items-center justify-center px-8 py-4 rounded-full glass text-foreground font-medium text-base hover:bg-secondary/50 transition-all"
           >
-            Ver Serviços
+            Como funciona
           </a>
         </motion.div>
       </motion.div>
@@ -110,7 +116,7 @@ const HeroSection = () => {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
       >
-        <a href="#servicos">
+        <a href="#numeros">
           <ChevronDown className="w-5 h-5 text-muted-foreground animate-bounce" />
         </a>
       </motion.div>

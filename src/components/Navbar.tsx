@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 
 const links = [
   { label: "Serviços", href: "#servicos" },
-  { label: "Projetos", href: "#projetos" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Contato", href: "#contato" },
+  { label: "Como funciona", href: "#como-funciona" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 const Navbar = () => {
@@ -18,6 +17,9 @@ const Navbar = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const whatsappLink =
+    "https://wa.me/5514998671049?text=Ol%C3%A1%20Enzzo%2C%20gostaria%20de%20um%20or%C3%A7amento!";
 
   return (
     <motion.nav
@@ -45,9 +47,12 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contato"
-            className="px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:brightness-110 transition-all"
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:brightness-110 transition-all"
           >
+            <MessageCircle className="w-4 h-4" />
             Orçamento
           </a>
         </div>
@@ -81,10 +86,13 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#contato"
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="block w-full text-center px-5 py-2 rounded-full bg-primary text-primary-foreground font-semibold"
+                className="flex items-center justify-center gap-2 w-full px-5 py-2 rounded-full bg-primary text-primary-foreground font-semibold"
               >
+                <MessageCircle className="w-4 h-4" />
                 Orçamento
               </a>
             </div>

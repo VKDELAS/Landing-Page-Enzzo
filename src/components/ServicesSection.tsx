@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
-import { Globe, Bot, Code2, Smartphone } from "lucide-react";
+import { Globe, Bot, Code2, TrendingUp } from "lucide-react";
 
 const services = [
   {
     icon: Globe,
-    title: "Sites Profissionais",
+    title: "Site que aparece no Google",
     description:
-      "Sites modernos, responsivos e otimizados para SEO. Landing pages, portfólios e sites institucionais.",
+      "Site otimizado para SEO que traz clientes reais. Landing pages, portfólios e sites institucionais que convertem.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Aumento de vendas online",
+    description:
+      "Sistemas de e-commerce e vendas com banco de dados para gerenciar pedidos, cardápio e estoque automaticamente.",
   },
   {
     icon: Bot,
-    title: "Bots de Discord",
+    title: "Automação para seu negócio",
     description:
-      "Bots personalizados para seu servidor. Moderação, música, economia, RPG e muito mais.",
+      "Bots personalizados para Discord e outras plataformas que otimizam tarefas, engajam comunidade e economizam tempo.",
   },
   {
     icon: Code2,
-    title: "Sistemas Web",
+    title: "Sistemas sob medida",
     description:
-      "Aplicações web completas com painel administrativo, banco de dados e integrações.",
-  },
-  {
-    icon: Smartphone,
-    title: "Design Responsivo",
-    description:
-      "Interfaces que funcionam perfeitamente em qualquer dispositivo — desktop, tablet e mobile.",
+      "Aplicações web completas com painel administrativo, banco de dados e integrações para suas necessidades específicas.",
   },
 ];
 
@@ -43,14 +43,17 @@ const ServicesSection = () => {
           className="text-center mb-20"
         >
           <p className="font-mono text-xs tracking-[0.4em] uppercase text-primary/70 mb-4">
-            serviços
+            Serviços
           </p>
           <h2 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
-            O que eu <span className="text-gradient">faço</span>
+            Chega de perder <span className="text-gradient">vendas</span>
           </h2>
+          <p className="text-muted-foreground text-lg mt-6 max-w-2xl mx-auto">
+            Soluções digitais que trazem seu negócio para o online e atraem mais clientes
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
