@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Sua Irmã",
+      name: "Maraysis Pontes",
       role: "Proprietária - BataTop",
       content:
         "O Enzzo entregou um site incrível para a Batata Top! Superou minhas expectativas e me ajudou a organizar as vendas e gerenciar os pedidos online. Recomendo muito!",
