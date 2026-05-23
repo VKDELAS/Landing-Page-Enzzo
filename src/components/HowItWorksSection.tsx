@@ -54,19 +54,22 @@ const HowItWorksSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
-              className="relative"
+              className="relative pt-8"
             >
               {/* Connector line */}
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-1/4 -right-4 w-8 h-px bg-gradient-to-r from-primary/50 to-transparent" />
               )}
 
-              <div className="relative p-8 rounded-2xl glass-subtle shine hover:border-primary/20 transition-all duration-500 h-full">
-                <div className="absolute -top-6 left-8 w-12 h-12 rounded-full bg-primary flex items-center justify-center font-bold text-primary-foreground">
+              {/* Number badge - positioned outside the card */}
+              <div className="absolute -top-6 left-8 z-10">
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center font-bold text-primary-foreground text-lg">
                   {step.number}
                 </div>
+              </div>
 
-                <div className="relative z-10 pt-6">
+              <div className="relative p-8 rounded-2xl glass-subtle hover:border-primary/20 transition-all duration-500 h-full">
+                <div className="relative z-10">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                     <step.icon className="w-6 h-6 text-primary" />
                   </div>
